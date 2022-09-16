@@ -1,12 +1,11 @@
 import java.util.HashMap;
 import java.util.Set;
 
-public class Annuaire extends HashMap<String, String> {
-    private String noms;
-    private String telephone;
+public class AnnuaireComp extends HashMap<String,Personne> {
+    private String numeros;
+    private Personne personne;
 
-
-    public Annuaire() {
+    public AnnuaireComp(){
     }
 
     /**
@@ -14,9 +13,9 @@ public class Annuaire extends HashMap<String, String> {
      * la table)
      */
     public void domaine() {
-        Set<String> noms = this.keySet();
-        for (String nom : noms) {
-            System.out.println(nom);
+        Set<String> numeros = this.keySet();
+        for (String numero : numeros) {
+            System.out.println(numero);
 
         }
     }
@@ -28,8 +27,8 @@ public class Annuaire extends HashMap<String, String> {
      * @param nom
      * @return
      */
-    public String acces(String nom) {
-        return this.get(nom);
+    public Personne acces(String numero) {
+        return this.get(numero);
 
     }
 
@@ -41,8 +40,8 @@ public class Annuaire extends HashMap<String, String> {
      * @param nom
      * @param numero
      */
-    public void adjonction(String nom, String numero) {
-        this.putIfAbsent(nom, numero);
+    public void adjonction(String numero, String nom, String prenom) {
+        this.putIfAbsent(nom, new Personne(nom, prenom));
     }
 
     /**
@@ -50,9 +49,9 @@ public class Annuaire extends HashMap<String, String> {
      *
      * @param nom
      */
-    public void suppression(String nom) {
-        if (this.containsKey(nom))
-            this.remove(nom);
+    public void suppression(String numero) {
+        if (this.containsKey(numero))
+            this.remove(numero);
     }
 
     /**
@@ -61,11 +60,7 @@ public class Annuaire extends HashMap<String, String> {
      *
      * @param nom
      */
-    public void changement(String nom, String numero) {
-        if (this.containsKey(nom)) put(nom, numero);
+    public void changement(String numero, String nom, String prenom) {
+        if (this.containsKey(numero)) put(nom, new Personne(nom, prenom));
     }
-
-
 }
-
-
