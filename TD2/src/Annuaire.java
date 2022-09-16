@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Set;
 
 public class Annuaire extends HashMap<String, String> {
     private String noms;
@@ -7,12 +8,11 @@ public class Annuaire extends HashMap<String, String> {
     public Annuaire() {
     }
 
-    public HashMap<String,String> domaine() {
-        HashMap<String,String> res = new HashMap<String,String>();
-        for (int i = 0; i < this.size(); i++) {
-            res.clone();
-        }
+    public Set<String> domaine() {
+        return this.keySet();
     }
+
+
 }
 
 
