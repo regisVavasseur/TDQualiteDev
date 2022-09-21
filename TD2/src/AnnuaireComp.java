@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Set;
 
-public class AnnuaireComp extends HashMap<String,Personne> {
+public class AnnuaireComp extends HashMap<Personne,String> {
     private String numeros;
     private Personne personne;
 
@@ -13,9 +13,9 @@ public class AnnuaireComp extends HashMap<String,Personne> {
      * la table)
      */
     public void domaine() {
-        Set<String> numeros = this.keySet();
-        for (String numero : numeros) {
-            System.out.println(numero);
+        Set<Personne> personnes = this.keySet();
+        for (Personne personne : personnes) {
+            System.out.println(personne);
 
         }
     }
@@ -27,8 +27,8 @@ public class AnnuaireComp extends HashMap<String,Personne> {
      * @param nom
      * @return
      */
-    public Personne acces(String numero) {
-        return this.get(numero);
+    public String acces(Personne personne) {
+        return this.get(personne);
 
     }
 
@@ -41,7 +41,7 @@ public class AnnuaireComp extends HashMap<String,Personne> {
      * @param numero
      */
     public void adjonction(String numero, String nom, String prenom) {
-        this.putIfAbsent(nom, new Personne(nom, prenom));
+        this.putIfAbsent(new Personne(nom, prenom),nom);
     }
 
     /**
@@ -49,9 +49,9 @@ public class AnnuaireComp extends HashMap<String,Personne> {
      *
      * @param nom
      */
-    public void suppression(String numero) {
-        if (this.containsKey(numero))
-            this.remove(numero);
+    public void suppression(Personne personne) {
+        if (this.containsKey(personne))
+            this.remove(personne);
     }
 
     /**
@@ -61,6 +61,7 @@ public class AnnuaireComp extends HashMap<String,Personne> {
      * @param nom
      */
     public void changement(String numero, String nom, String prenom) {
-        if (this.containsKey(numero)) put(nom, new Personne(nom, prenom));
+        Personne personne = new Personne(nom,prenom);
+        if (this.containsKey(personne)) put(personne,nom);
     }
 }

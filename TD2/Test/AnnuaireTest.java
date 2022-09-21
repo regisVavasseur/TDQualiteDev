@@ -61,4 +61,5 @@ class AnnuaireTest {
         assertFalse(annuaire.containsKey("titi"));
         assertEquals("0612345678", annuaire.acces("toto"));
     }
+
 }
