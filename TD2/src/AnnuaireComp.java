@@ -27,7 +27,8 @@ public class AnnuaireComp extends HashMap<Personne,String> {
      * @param nom
      * @return
      */
-    public String acces(Personne personne) {
+    public String acces(String nom, String prenom) {
+        Personne personne = new Personne(nom, prenom);
         return this.get(personne);
 
     }
@@ -41,7 +42,7 @@ public class AnnuaireComp extends HashMap<Personne,String> {
      * @param numero
      */
     public void adjonction(String numero, String nom, String prenom) {
-        this.putIfAbsent(new Personne(nom, prenom),nom);
+        this.putIfAbsent(new Personne(nom, prenom),numero);
     }
 
     /**
@@ -49,7 +50,8 @@ public class AnnuaireComp extends HashMap<Personne,String> {
      *
      * @param nom
      */
-    public void suppression(Personne personne) {
+    public void suppression(String nom,String prenom) {
+        Personne personne = new Personne(nom, prenom);
         if (this.containsKey(personne))
             this.remove(personne);
     }
@@ -60,8 +62,8 @@ public class AnnuaireComp extends HashMap<Personne,String> {
      *
      * @param nom
      */
-    public void changement(String numero, String nom, String prenom) {
-        Personne personne = new Personne(nom,prenom);
-        if (this.containsKey(personne)) put(personne,nom);
+    public void changement(String prenom,String nom, String numero) {
+        Personne personne = new Personne(nom, prenom);
+        if (this.containsKey(personne)) put(personne,numero);
     }
 }

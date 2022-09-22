@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Personne {
     private String nom;
     private String prenom;
@@ -23,4 +25,16 @@ public class Personne {
         this.prenom = prenom;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Personne personne = (Personne) o;
+        return Objects.equals(nom, personne.nom) && Objects.equals(prenom, personne.prenom);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nom, prenom);
+    }
 }
