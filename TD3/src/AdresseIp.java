@@ -43,9 +43,5 @@ public class AdresseIp implements Comparable<AdresseIp> {
         } else {
             return 0;
         }
-
-
-
-
     }
 }

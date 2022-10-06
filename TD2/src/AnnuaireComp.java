@@ -66,4 +66,6 @@ public class AnnuaireComp extends HashMap<Personne,String> {
         Personne personne = new Personne(nom, prenom);
         if (this.containsKey(personne)) put(personne,numero);
     }
+
+
 }

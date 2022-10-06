@@ -1,17 +1,17 @@
 package Logos;
 
+public class CrazyFrog extends Personnage{
 
-public class ReneLaTaupe extends Personnage{
-
-    public ReneLaTaupe(String text) {
+    public CrazyFrog(String text) {
 
 
-        setNomIm("img/Taupe.jpg");
+       setNomIm("img/CrazyFrog.jpg");
         setText(text);
         setPrix(1);
         setMyImage(new MyImage(getNomIm()));
         getMyImage().textOver(getText(), 200,50);
 
-
     }
+
+
 }

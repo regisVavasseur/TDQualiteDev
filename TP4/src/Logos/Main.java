@@ -7,16 +7,22 @@ public class Main
    
     public static void main(String args[])
     {
-        ReneLaTaupe l = new ReneLaTaupe();
-        MyImage i = l.getLogo(); 
-        
-        i.paintOver("img/Chapeau.png", 280,42);
-        i.paintOver("img/Sunglasses.png", 255,76);
-        i.paintOver("img/Candy.png", 441,202);
-        i.paintOver("img/Smiley.png", 260,210);
-        
-        i.display();  // Permet l'affichage dans une fenetre de l'image associee
-        
+        Personnage l = new ReneLaTaupe("Rene la Taupe");
+        l = new DecorateurChapeau(l,280,42);
+        l = new DecorateurLunettes(l,255,76);
+        l = new DecorateurCandy(l,441 , 202);
+        l = new DecorateurSmiley(l,260,210);
+
+        Personnage l2 = new CrazyFrog("BANG BANG");
+        l2 = new DecorateurChapeau(l2,280,42);
+        l2 = new DecorateurLunettes(l2,255,76);
+        l2 = new DecorateurCandy(l2,441 , 202);
+        l2 = new DecorateurSmiley(l2,260,210);
+
+
+
+        l.getMyImage().display();  // Permet l'affichage dans une fenetre de l'image associee
+        l2.getMyImage().display();
         
     }
         

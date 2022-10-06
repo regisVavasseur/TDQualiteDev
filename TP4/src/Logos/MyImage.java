@@ -20,6 +20,7 @@ public class MyImage extends JPanel {
         try{
             this.image = ImageIO.read(new File(path));
             size.setSize(image.getWidth(), image.getHeight());
+
         }
         catch(Exception e)
         {
@@ -86,7 +87,8 @@ public class MyImage extends JPanel {
      */
     public void textOver(String txt, int x, int y){     
         Graphics g=this.image.getGraphics();
-        
+        g.setColor(Color.BLACK);
+        g.setFont(new Font("Arial", Font.BOLD, 20));
 		g.drawString(txt,x,y);
 		g.dispose();
     }
