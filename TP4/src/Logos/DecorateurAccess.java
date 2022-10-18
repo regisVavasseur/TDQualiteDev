@@ -1,17 +1,20 @@
 package Logos;
 
 public abstract class DecorateurAccess extends Personnage{
+    private Personnage personnage;
 
     /**
      * Constructeur
      *
      */
-    public DecorateurAccess(double p, String nomImAcces, Personnage personnage,int decalx,int decaly){
+    public DecorateurAccess(double p, Personnage personnage, String nomIm, int decalx, int decaly) {
+        this.personnage = personnage;
         this.setPrix(this.getPrix() + p);
         this.setMyImage(personnage.getMyImage());
-        this.getMyImage().paintOver(nomImAcces, decalx,decaly);
+
 
     }
 
-
+    @Override
+    public abstract MyImage getMyImage();
 }

@@ -1,12 +1,13 @@
 package Logos;
 
-public class DecorateurLunettes extends DecorateurAccess{
+public class DecorateurLunettes extends DecorateurAccess {
 
 
-    public DecorateurLunettes(Personnage personnage,int decalx, int decaly){
-       super(0.5, "img/Sunglasses.png", personnage, decalx, decaly);
+    public DecorateurLunettes(Personnage personnage) {
+        super(0.5, personnage, "img/Sunglasses.png", 255, 76);
 
     }
+
 
 
 }

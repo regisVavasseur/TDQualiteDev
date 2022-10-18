@@ -14,16 +14,8 @@ public abstract class Personnage {
      */
     private double prix;
 
-    private String text;
 
-    /*public Personnage(String text, String nomIm, double prix) {
-        this.nomIm = nomIm;
-        this.prix = prix;
-        this.text = text;
-        this.myImage = new MyImage(nomIm);
-        this.myImage.textOver(text, 100,100);
 
-    }*/
 
     public MyImage getMyImage() {
         return myImage;
@@ -49,11 +41,4 @@ public abstract class Personnage {
         this.prix = prix;
     }
 
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
 }

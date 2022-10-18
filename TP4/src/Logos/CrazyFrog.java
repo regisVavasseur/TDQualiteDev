@@ -1,16 +1,11 @@
 package Logos;
 
-public class CrazyFrog extends Personnage{
+public class CrazyFrog extends Personnage {
 
-    public CrazyFrog(String text) {
-
-
-       setNomIm("img/CrazyFrog.jpg");
-        setText(text);
-        setPrix(1);
-        setMyImage(new MyImage(getNomIm()));
-        getMyImage().textOver(getText(), 200,50);
-
+    public CrazyFrog() {
+        this.setNomIm("img/CrazyFrog.png");
+        this.setPrix(1);
+        this.setMyImage(new MyImage(getNomIm()));
     }
 
 
